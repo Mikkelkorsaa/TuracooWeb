@@ -1,0 +1,32 @@
+# Build output directories
+bin/
+obj/
+publish-folder/
+*.exe
+*.dll
+*.pdb
+
+# JetBrains Rider specific files
+*.iml
+/.idea/
+/_ReSharper.Caches/
+resharper-logs
+
+# Visual Studio specific files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln*
+*.vcxproj*
+*.vcxproj.filters
+
+# NuGet packages
+/packages/
+/*.nupkg
+*.snupkg
+*.nuspec
+
+# VS Code specific files
+.vscode/
+*.code-workspace
