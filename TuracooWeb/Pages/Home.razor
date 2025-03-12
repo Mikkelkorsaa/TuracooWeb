@@ -1,0 +1,250 @@
+﻿@page "/"
+
+<PageTitle>Turacoo</PageTitle>
+
+<div class="d-flex flex-column align-items-center" style="width: 100%; height: calc(100vh - 192px); margin-bottom: 64px">
+    <div class="bg-primary text-white w-75 h-100 d-flex flex-column align-items-center">
+        <img class="mx-auto d-block" src="Images/logo_no_background.png" style="max-width: 100%; height: 70%" alt="Turacoo Logo" />
+        <h1 class="text-center mt-3" style="padding: 10px 0">
+            Din Partner i Digital Transformation
+        </h1>
+        <p class="text-center px-3 text-white-50">
+            Vi omsætter komplekse udfordringer til værdiskabende digitale løsninger.
+        </p>
+        <div class="d-flex justify-content-center mt-auto">
+            <a href="/kontakt-os" class="btn btn-secondary mt-2 mb-4">
+                Start Samarbejdet
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="d-flex flex-column align-items-center py-4" style="background-color: #f8f9fa;">
+    <div class="w-100 px-lg-5 py-4" style="background-color: #f8f9fa;">
+        <h2 class="text-center mb-3">Mere end bare teknologi</h2>
+        <p class="text-center text-muted mx-auto px-2 px-md-5" style="max-width: 600px;">
+            Hos os handler softwareudvikling ikke bare om kode – det handler om at skabe reel forretningsværdi.
+            Vi er din strategiske partner, der hjælper med at transformere idéer til skalerbare løsninger.
+        </p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <h2 class="text-center mb-5">Vores Tilgang</h2>
+
+    <div class="row">
+        <!-- First row -->
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card rounded h-100 d-flex flex-column">
+                <div class="card-body flex-grow-1 d-flex flex-column">
+                    <h3 class="card-title text-center mb-4">Strategisk Partnerskab</h3>
+                    <div class="d-flex justify-content-center flex-grow-1">
+                        <p class="text-center mb-4 mx-auto" style="max-width: 80%;">
+                            Vi dykker dybt ned i din forretning for at forstå dine
+                            udfordringer og mål.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex justify-content-center">
+                    <a href="/strategisk-partnerskab" class="btn btn-primary mb-3">
+                        Læs Mere
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card rounded h-100 d-flex flex-column">
+                <div class="card-body flex-grow-1 d-flex flex-column">
+                    <h3 class="card-title text-center mb-4">Innovation & Stabilitet</h3>
+                    <div class="d-flex justify-content-center flex-grow-1">
+                        <p class="text-center mb-4 mx-auto" style="max-width: 80%;">
+                            Vi kombinerer innovative teknologier med solid arkitektur.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex justify-content-center">
+                    <a href="/innovation-stabilitet" class="btn btn-primary mb-3">
+                        Læs Mere
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second row -->
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card rounded h-100 d-flex flex-column">
+                <div class="card-body flex-grow-1 d-flex flex-column">
+                    <h3 class="card-title text-center mb-4">Agil Udvikling</h3>
+                    <div class="d-flex justify-content-center flex-grow-1">
+                        <p class="text-center mb-4 mx-auto" style="max-width: 80%;">
+                            Gennem tæt dialog og hurtige iterationer sikrer vi de
+                            bedste løsninger.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex justify-content-center">
+                    <a href="/agil-udvikling" class="btn btn-primary mb-3">
+                        Læs Mere
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card rounded h-100 d-flex flex-column">
+                <div class="card-body flex-grow-1 d-flex flex-column">
+                    <h3 class="card-title text-center mb-4">End-to-End Ekspertise</h3>
+                    <div class="d-flex justify-content-center flex-grow-1">
+                        <p class="text-center mb-4 mx-auto" style="max-width: 80%;">
+                            Fra frontend til infrastruktur har vi ekspertisen til at
+                            håndtere hele din teknologistack.
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer bg-white border-0 d-flex justify-content-center">
+                    <a href="/end-to-end-ekspertise" class="btn btn-primary mb-3">
+                        Læs Mere
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    <h2 class="mb-4 text-center">Our Partners</h2>
+
+    <div class="position-relative py-4">
+        @if (!IsLoaded)
+        {
+            <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <img src="Images/bankdata_logo.jpeg" alt="Bankdata Logo" height="100" width="200" style="object-fit: contain;" />
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="Images/feincofee.jpeg" alt="Feincofee Logo" height="100" width="200" style="object-fit: contain;" />
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <img src="Images/plsp_logo.jpeg" alt="PLSP Logo" height="100" width="200" style="object-fit: contain;" />
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#partnerCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#partnerCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        }
+    </div>
+
+    <div class="d-flex justify-content-center mt-4">
+        <button class="btn btn-primary mx-2" @onclick="TogglePause">
+            @(IsPaused ? "Resume" : "Pause")
+        </button>
+    </div>
+</div>
+
+<div class="py-5 px-4 mt-5 mb-5" style="background-color: #f8f9fa;">
+    <div class="container">
+        <h2 class="text-center mb-4">Kontakt Os</h2>
+        
+        <p class="text-center">
+            Har du brug for en skræddersyet løsning? Kontakt os på 
+            <a href="mailto:kontakt@firma.dk">kontakt@firma.dk</a> 
+            for en uforpligtende snak.
+        </p>
+    </div>
+</div>
+
+<style>
+    .carousel-container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .logo-item {
+        transition: all 0.3s ease;
+    }
+
+    .grayscale {
+        filter: grayscale(100%);
+        opacity: 0.7;
+    }
+
+    .logo-item:hover {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+    
+    /* Custom carousel controls */
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 50%;
+    }
+</style>
+
+@code {
+    private bool IsPaused = false;
+    private bool IsLoaded = false;
+    
+    private List<LogoItem> Logos = new List<LogoItem>
+    {
+        new LogoItem { Name = "Bankdata", ImageUrl = "Images/bankdata_logo.jpeg" },
+        new LogoItem { Name = "B&R", ImageUrl = "Images/br_industrial_automation_logo.jpeg" },
+        new LogoItem { Name = "Feincoffe", ImageUrl = "Images/feincofee.jpeg" },
+        new LogoItem { Name = "Feinwood", ImageUrl = "Images/feinwood_logo.jpeg" },
+        new LogoItem { Name = "PLSP", ImageUrl = "Images/plsp_logo.jpeg" },
+    }; 
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Simulate loading delay
+            await Task.Delay(100);
+            IsLoaded = true;
+            StateHasChanged();
+        }
+    }
+    
+    private async Task TogglePause()
+    {
+        IsPaused = !IsPaused;
+        
+        // This would require JavaScript interop to actually pause the carousel
+        await Task.CompletedTask;
+    }
+    
+    private class LogoItem
+    {
+        public string Name { get; set; }
+        public string ImageUrl { get; set; }
+    }
+}

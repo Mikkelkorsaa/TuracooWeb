@@ -1,0 +1,78 @@
+@page "/kontakt-os"
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>Kontakt Os</PageTitle>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h1 class="text-center mb-3">Kontakt Os</h1>
+                    <p class="text-center text-muted mb-4">Har du spørgsmål? Send os en besked.</p>
+                    
+                    <EditForm Model="@contactModel" OnValidSubmit="HandleSubmit">
+                        <DataAnnotationsValidator />
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Navn</label>
+                            <InputText @bind-Value="contactModel.Name" 
+                                      class="form-control" 
+                                      id="name" />
+                            <ValidationMessage For="@(() => contactModel.Name)" class="text-danger" />
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <InputText @bind-Value="contactModel.Email" 
+                                      class="form-control" 
+                                      id="email" />
+                            <ValidationMessage For="@(() => contactModel.Email)" class="text-danger" />
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Besked</label>
+                            <InputTextArea @bind-Value="contactModel.Message" 
+                                          class="form-control" 
+                                          id="message" 
+                                          rows="8" />
+                            <ValidationMessage For="@(() => contactModel.Message)" class="text-danger" />
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-secondary btn-lg py-3">
+                                Send Besked
+                            </button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private ContactModel contactModel = new ContactModel();
+
+    private void HandleSubmit()
+    {
+        // Add your form submission logic here
+        Console.WriteLine($"Form submitted: {contactModel.Name}, {contactModel.Email}");
+        // You would typically call a service to send the message
+
+        // Reset the form after submission
+        contactModel = new ContactModel();
+    }
+
+    public class ContactModel
+    {
+        [Required(ErrorMessage = "Navn er påkrævet")]
+        public string Name { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Email er påkrævet")]
+        [EmailAddress(ErrorMessage = "Ugyldig email adresse")]
+        public string Email { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Besked er påkrævet")]
+        public string Message { get; set; } = string.Empty;
+    }
+}
