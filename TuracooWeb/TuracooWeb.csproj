@@ -11,4 +11,16 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.2" PrivateAssets="all"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="publish-folder\web.config" />
+      <_ContentIncludedByDefault Remove="publish-folder\emcc-props.json" />
+      <_ContentIncludedByDefault Remove="publish-folder\publish-folder\emcc-props.json" />
+      <_ContentIncludedByDefault Remove="publish-folder\publish-folder\TuracooWeb.staticwebassets.endpoints.json" />
+      <_ContentIncludedByDefault Remove="publish-folder\publish-folder\wwwroot\sample-data\weather.json" />
+      <_ContentIncludedByDefault Remove="publish-folder\publish-folder\wwwroot\_framework\blazor.boot.json" />
+      <_ContentIncludedByDefault Remove="publish-folder\TuracooWeb.staticwebassets.endpoints.json" />
+      <_ContentIncludedByDefault Remove="publish-folder\wwwroot\sample-data\weather.json" />
+      <_ContentIncludedByDefault Remove="publish-folder\wwwroot\_framework\blazor.boot.json" />
+    </ItemGroup>
+
 </Project>
