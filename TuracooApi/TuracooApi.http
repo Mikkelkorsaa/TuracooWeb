@@ -1,0 +1,6 @@
+@TuracooApi_HostAddress = http://localhost:5239
+
+GET {{TuracooApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
