@@ -12,7 +12,7 @@
             Vi omsætter komplekse udfordringer til værdiskabende digitale løsninger.
         </p>
         <div class="d-flex justify-content-center mt-auto">
-            <a href="/kontakt-os" class="btn btn-secondary mt-2 mb-4">
+            <a href="mailto:contact@turacoo.com" class="btn btn-secondary mt-2 mb-4">
                 Start Samarbejdet
             </a>
         </div>
@@ -113,9 +113,9 @@
 </div>
 
 <div class="container my-4">
-    <h2 class="mb-4 text-center">Our Partners</h2>
+    <h2 class="mb-4 text-center">Tidligere arbejdet for</h2>
 
-    <div class="position-relative py-4">
+    <div class="py-4">
         @if (!IsLoaded)
         {
             <div class="d-flex justify-content-center align-items-center" style="height: 150px;">
@@ -126,52 +126,67 @@
         }
         else
         {
-            <div id="partnerCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-center">
-                            <img src="Images/bankdata_logo.jpeg" alt="Bankdata Logo" height="100" width="200" style="object-fit: contain;" />
-                        </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center">
+                <div class="col d-flex justify-content-center">
+                    <div class="partner-logo logo-item">
+                        <img src="Images/bankdata_logo.jpeg" alt="Bankdata Logo" height="100" width="200" style="object-fit: contain;" />
                     </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <img src="Images/feincofee.jpeg" alt="Feincofee Logo" height="100" width="200" style="object-fit: contain;" />
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <img src="Images/plsp_logo.jpeg" alt="PLSP Logo" height="100" width="200" style="object-fit: contain;" />
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <img src="Images/feinwood_logo.jpeg" alt="Feinwood Logo" height="100" width="200" style="object-fit: contain;" />
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <img src="Images/br_industrial_automation_logo.jpeg" alt="B&R Logo" height="100" width="200" style="object-fit: contain;" />
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
-                            <img src="Images/arch_plus_logo.jpg" alt="Arch Plus Logo" height="100" width="200" style="object-fit: contain;" />
-                        </div>
-                    </div>
-                    
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#partnerCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#partnerCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div class="col d-flex justify-content-center">
+                    <div class="partner-logo logo-item">
+                        <img src="Images/feincofee.jpeg" alt="Feincofee Logo" height="100" width="200" style="object-fit: contain;" />
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="partner-logo logo-item">
+                        <img src="Images/plsp_logo.jpeg" alt="PLSP Logo" height="100" width="200" style="object-fit: contain;" />
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="partner-logo logo-item">
+                        <img src="Images/feinwood_logo.jpeg" alt="Feinwood Logo" height="100" width="200" style="object-fit: contain;" />
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="partner-logo logo-item">
+                        <img src="Images/br_industrial_automation_logo.jpeg" alt="B&R Logo" height="100" width="200" style="object-fit: contain;" />
+                    </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <div class="partner-logo logo-item">
+                        <img src="Images/arch_plus_logo.jpg" alt="Arch Plus Logo" height="100" width="200" style="object-fit: contain;" />
+                    </div>
+                </div>
             </div>
         }
     </div>
 </div>
+
+<style>
+    .partner-logo {
+        padding: 15px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+    }
+
+    .logo-item {
+        transition: all 0.3s ease;
+    }
+
+    .grayscale {
+        filter: grayscale(100%);
+        opacity: 0.7;
+    }
+
+    .logo-item:hover {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+</style>
 
 <div class="py-5 px-4 mt-5 mb-5" style="background-color: #f8f9fa;">
     <div class="container">
@@ -179,7 +194,7 @@
         
         <p class="text-center">
             Har du brug for en skræddersyet løsning? Kontakt os på 
-            <a href="mailto:kontakt@firma.dk">kontakt@firma.dk</a> 
+            <a href="mailto:contact@turacoo.com">contact@turacoo.com</a> 
             for en uforpligtende snak.
         </p>
     </div>
@@ -221,9 +236,8 @@
 </style>
 
 @code {
-    private bool IsPaused = false;
     private bool IsLoaded = false;
-    
+
     private List<LogoItem> Logos = new List<LogoItem>
     {
         new LogoItem { Name = "Bankdata", ImageUrl = "Images/bankdata_logo.jpeg" },
@@ -231,8 +245,9 @@
         new LogoItem { Name = "Feincoffe", ImageUrl = "Images/feincofee.jpeg" },
         new LogoItem { Name = "Feinwood", ImageUrl = "Images/feinwood_logo.jpeg" },
         new LogoItem { Name = "PLSP", ImageUrl = "Images/plsp_logo.jpeg" },
-    }; 
-    
+        new LogoItem { Name = "Arch Plus", ImageUrl = "Images/arch_plus_logo.jpg" },
+    };
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -243,15 +258,7 @@
             StateHasChanged();
         }
     }
-    
-    private async Task TogglePause()
-    {
-        IsPaused = !IsPaused;
-        
-        // This would require JavaScript interop to actually pause the carousel
-        await Task.CompletedTask;
-    }
-    
+
     private class LogoItem
     {
         public string Name { get; set; }
